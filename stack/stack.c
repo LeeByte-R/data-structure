@@ -23,6 +23,13 @@ data_type stack_pop(stack *st){
   return st->elements[st->top+1];
 }
 
+data_type stack_peek(stack *st){
+  if(st->top == -1)  // stack is empty
+    return st->elements[0];
+
+  return st->elements[st->top];
+}
+
 int stack_size(stack *st){
   return st->top + 1;
 }

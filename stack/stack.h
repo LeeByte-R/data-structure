@@ -62,6 +62,15 @@ bool stack_push(stack *st, data_type d);
 data_type stack_pop(stack *st);
 
 /**
+ * peek data at top of stack \n
+ * if stack is empty, return value will be undetermined. check stack is not empty before use.
+ *
+ * @param st stack pointer to peek
+ * @return data of end node of stack
+ */
+data_type stack_peek(stack *st);
+
+/**
  * get size of stack
  *
  * @param st stack pointer

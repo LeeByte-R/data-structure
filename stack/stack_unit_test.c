@@ -46,6 +46,21 @@ void stack_pop_test(){
   printf("stack_pop pass\r\n");
 }
 
+void stack_peek_test(){
+  stack test_st;
+
+  stack_init(&test_st);
+
+  stack_push(&test_st, 0);
+  stack_push(&test_st, 1);
+  stack_push(&test_st, 2);
+
+  assert(stack_peek(&test_st) == 2);
+  assert(test_st.elements[2] == 2);
+
+  printf("stack_peek pass\r\n");
+}
+
 void stack_size_test(){
   stack test_st;
 
@@ -93,6 +108,7 @@ int main(){
   stack_init_test();
   stack_push_test();
   stack_pop_test();
+  stack_peek_test();
   stack_size_test();
   stack_is_empty_test();
   stack_is_full_test();
