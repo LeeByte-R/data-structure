@@ -219,5 +219,7 @@ int main(){
   list_is_empty_test();
   list_clear_test();
   list_reverse_test();
+  
+  return 0;
 }
 
