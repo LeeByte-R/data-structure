@@ -1,11 +1,13 @@
 # include "queue.h"
 
-void queue_init(queue *q){
+void queue_init(queue *q)
+{
   q->front = 0;
   q->back = 0;
 }
 
-bool queue_push(queue *q, data_type d){
+bool queue_push(queue *q, data_type d)
+{
   if(queue_is_full(q))
     return false;
 
@@ -15,7 +17,8 @@ bool queue_push(queue *q, data_type d){
   return true;
 }
 
-data_type queue_pop(queue *q){
+data_type queue_pop(queue *q)
+{
   if(queue_is_empty(q))
     return q->elements[0];
   
@@ -24,7 +27,8 @@ data_type queue_pop(queue *q){
   return q->elements[q->front];
 }
 
-data_type queue_peek(queue *q){
+data_type queue_peek(queue *q)
+{
   if(queue_is_empty(q))
     return q->elements[0];
 
@@ -53,3 +57,8 @@ bool queue_is_full(queue *q)
   return ((q->back + 1) % QUEUE_CAPACITY == q->front);
 }
 
+void queue_clear(queue *q)
+{
+  q->front = 0;
+  q->back = 0;
+}

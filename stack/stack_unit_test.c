@@ -104,6 +104,22 @@ void stack_is_full_test(){
   printf("stack_is_full pass\r\n");
 }
 
+void stack_clear_test(){
+  stack test_st;
+
+  stack_init(&test_st);
+
+  stack_push(&test_st, 0);
+  stack_push(&test_st, 1);
+  stack_push(&test_st, 2);
+
+  assert(stack_is_empty(&test_st) == false);
+  stack_clear(&test_st);
+  assert(stack_is_empty(&test_st) == true);
+
+  printf("stack_clear pass\r\n");
+}
+
 int main(){
   stack_init_test();
   stack_push_test();
@@ -112,6 +128,7 @@ int main(){
   stack_size_test();
   stack_is_empty_test();
   stack_is_full_test();
+  stack_clear_test();
 
   return 0;
 }

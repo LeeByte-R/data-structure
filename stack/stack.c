@@ -1,10 +1,12 @@
 #include "stack.h"
 
-void stack_init(stack *st){
+void stack_init(stack *st)
+{
   st->top = -1;
 }
 
-bool stack_push(stack *st, data_type d){
+bool stack_push(stack *st, data_type d)
+{
   if(st->top+1 == STACK_CAPACITY)  // stack is full
     return false;
 
@@ -14,7 +16,8 @@ bool stack_push(stack *st, data_type d){
   return true;
 }
 
-data_type stack_pop(stack *st){
+data_type stack_pop(stack *st)
+{
   if(st->top == -1)  // stack is empty
     return st->elements[0];
   
@@ -23,21 +26,30 @@ data_type stack_pop(stack *st){
   return st->elements[st->top+1];
 }
 
-data_type stack_peek(stack *st){
+data_type stack_peek(stack *st)
+{
   if(st->top == -1)  // stack is empty
     return st->elements[0];
 
   return st->elements[st->top];
 }
 
-int stack_size(stack *st){
+int stack_size(stack *st)
+{
   return st->top + 1;
 }
 
-bool stack_is_empty(stack *st){
+bool stack_is_empty(stack *st)
+{
   return (st->top + 1 == 0);
 }
 
-bool stack_is_full(stack *st){
+bool stack_is_full(stack *st)
+{
   return (st->top + 1 == STACK_CAPACITY);
+}
+
+void stack_clear(stack *st)
+{
+  st->top = -1;
 }

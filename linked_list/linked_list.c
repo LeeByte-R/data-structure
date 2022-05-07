@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-void list_init(list *l){
+void list_init(list *l)
+{
   list_node *tmp = (list_node *)malloc(sizeof(list_node));
   tmp->next = NULL;
 
@@ -11,7 +12,8 @@ void list_init(list *l){
   l->len = 0;
 }
 
-bool list_push_back(list *l, data_type d){
+bool list_push_back(list *l, data_type d)
+{
   list_node *tmp = (list_node *)malloc(sizeof(list_node));
   if(tmp == NULL)  // error in allocating memory
     return false;
@@ -26,7 +28,8 @@ bool list_push_back(list *l, data_type d){
   return true;
 }
 
-bool list_push(list *l, data_type d, int location){
+bool list_push(list *l, data_type d, int location)
+{
   if(location > l->len || location < 0)  // invalid index, valid index should be 0 ~ len-1
     return false;
 
@@ -50,7 +53,8 @@ bool list_push(list *l, data_type d, int location){
   return true;
 }
 
-data_type list_pop_back(list *l){
+data_type list_pop_back(list *l)
+{
   if(l->len == 0)
     return l->head->data;
 
@@ -69,7 +73,8 @@ data_type list_pop_back(list *l){
   return tmp_d;
 }
 
-data_type list_pop(list *l, int location){
+data_type list_pop(list *l, int location)
+{
   if(location > l->len || location < 0)  // invalid index, valid index should be 0 ~ len-1
     return l->head->data;
 
@@ -91,11 +96,13 @@ data_type list_pop(list *l, int location){
   return tmp_d;
 }
 
-data_type list_peek_back(list *l){
+data_type list_peek_back(list *l)
+{
   return l->tail->data;
 }
 
-data_type list_peek(list *l, int location){
+data_type list_peek(list *l, int location)
+{
   if(location > l->len || location < 0)  // invalid index, valid index should be 0 ~ len-1
     return l->head->data;
 
@@ -107,15 +114,18 @@ data_type list_peek(list *l, int location){
   return p->data;
 }
 
-int list_size(list *l){
+int list_size(list *l)
+{
   return l->len;
 }
 
-bool list_is_empty(list *l){
+bool list_is_empty(list *l)
+{
   return (l->len == 0);
 }
 
-void list_clear(list *l){
+void list_clear(list *l)
+{
   list_node *p = l->head->next, *tmp_p;
 
   while(p != NULL){
@@ -129,7 +139,8 @@ void list_clear(list *l){
   l->len = 0;
 }
 
-void list_reverse(list *l){
+void list_reverse(list *l)
+{
   list_node *prev_p = NULL;
   list_node *p = l->head->next;
   list_node *next_p = NULL;

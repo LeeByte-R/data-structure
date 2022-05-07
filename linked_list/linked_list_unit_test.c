@@ -208,6 +208,7 @@ void list_reverse_test(){
 }
 
 int main(){
+  /*
   list_init_test();
   list_push_back_test();
   list_push_test();
@@ -218,8 +219,7 @@ int main(){
   list_size_test();
   list_is_empty_test();
   list_clear_test();
+  */
   list_reverse_test();
-  
-  return 0;
 }
 

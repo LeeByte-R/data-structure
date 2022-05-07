@@ -94,4 +94,11 @@ bool stack_is_empty(stack *st);
  */
 bool stack_is_full(stack *st);
 
+/**
+ * clear stack content
+ *
+ * @param st stack pointer
+ */
+void stack_clear(stack *st);
+
 #endif // STACK_H

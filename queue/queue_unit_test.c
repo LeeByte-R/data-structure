@@ -102,6 +102,21 @@ void queue_is_full_test(){
 
   printf("queue_is_full pass\r\n");
 }
+void queue_clear_test(){
+  queue test_q;
+
+  queue_init(&test_q);
+
+  queue_push(&test_q, 0);
+  queue_push(&test_q, 1);
+  queue_push(&test_q, 2);
+
+  assert(queue_is_empty(&test_q) == false);
+  queue_clear(&test_q);
+  assert(queue_is_empty(&test_q) == true);
+
+  printf("queue_clear pass\r\n");
+}
 
 int main(){
   queue_init_test();
@@ -111,5 +126,7 @@ int main(){
   queue_size_test();
   queue_is_empty_test();
   queue_is_full_test();
+  queue_clear_test();
+  
   return 0;
 }

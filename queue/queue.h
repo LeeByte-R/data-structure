@@ -74,11 +74,9 @@ data_type queue_peek(queue *q);
 
 /**
  * get size of queue
-
  *
  * @param q queue pointer
  * @return size of queue
-
  */
 int queue_size(queue *q);
 
@@ -97,5 +95,12 @@ bool queue_is_empty(queue *q);
  * @return whether queue is full
  */
 bool queue_is_full(queue *q);
+
+/**
+ * clear queue content
+ *
+ * @param q queue pointer
+ */
+void queue_clear(queue *q);
 
 #endif // QUEUE_H
