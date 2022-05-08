@@ -15,7 +15,7 @@
 * 
 * @mainpage 
 * c heap implement \n
-* change typedef [***] data_type; for apply different data type
+* change typedef [***] data_type; for apply different data type \n
 * HEAP_CAPACITY is max size of heap
 */
 

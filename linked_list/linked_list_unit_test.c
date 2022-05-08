@@ -12,6 +12,7 @@ void list_init_test(){
   assert(test_l.tail != NULL);
   assert(test_l.len == 0);
 
+  list_clear(&test_l);
   printf("list_init pass\r\n");
 }
 
@@ -27,6 +28,7 @@ void list_push_back_test(){
   list_push_back(&test_l, 2);
   assert(test_l.head->next->next->next->data == 2);
   
+  list_clear(&test_l);
   printf("list_push_back pass\r\n");
 }
 
@@ -54,6 +56,7 @@ void list_push_test(){
   assert(list_push(&test_l, 999, 100) == false);  // insert wrong index(over length of linked list)
   assert(list_push(&test_l, 999, -100) == false);  // insert wrong index(under length of linked list)
 
+  list_clear(&test_l);
   printf("list_push pass\r\n");
 }
 
@@ -74,6 +77,7 @@ void list_pop_back_test(){
   assert(test_l.head->next == NULL);
   assert(test_l.len == 0);
   
+  list_clear(&test_l);
   printf("list_pop_back pass\r\n");
 }
 
@@ -100,6 +104,7 @@ void list_pop_test(){
   assert(test_l.len == 0);
   assert(test_l.head == test_l.tail);
   
+  list_clear(&test_l);
   printf("list_pop pass\r\n");
 }
 
@@ -114,6 +119,7 @@ void list_peek_back_test(){
 
   assert(list_peek_back(&test_l) == 2);
   
+  list_clear(&test_l);
   printf("list_peek_back pass\r\n");
 }
 
@@ -130,6 +136,7 @@ void list_peek_test(){
   assert(list_peek(&test_l, 0) == 0);
   assert(list_peek(&test_l, 2) == 2);
 
+  list_clear(&test_l);
   printf("list_peek pass\r\n");
 }
 
@@ -146,6 +153,7 @@ void list_size_test(){
 
   assert(list_size(&test_l) == 3);
 
+  list_clear(&test_l);
   printf("list_size pass\r\n");
 }
 
@@ -167,6 +175,7 @@ void list_is_empty_test(){
 
   assert(list_is_empty(&test_l) == true);
 
+  list_clear(&test_l);
   printf("list_is_empty pass\r\n");
 }
 
@@ -184,6 +193,7 @@ void list_clear_test(){
   assert(test_l.head == test_l.tail);
   assert(test_l.len == 0);
 
+  list_clear(&test_l);
   printf("list_clear pass\r\n");
 }
 
@@ -204,11 +214,11 @@ void list_reverse_test(){
   assert(test_l.tail->data == 0);
   assert(test_l.head->next->data == 2);
 
+  list_clear(&test_l);
   printf("list_reverse pass\r\n");
 }
 
 int main(){
-  /*
   list_init_test();
   list_push_back_test();
   list_push_test();
@@ -219,7 +229,8 @@ int main(){
   list_size_test();
   list_is_empty_test();
   list_clear_test();
-  */
   list_reverse_test();
+
+  return 0;
 }
 

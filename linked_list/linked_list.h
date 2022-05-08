@@ -15,7 +15,8 @@
 * 
 * @mainpage 
 * c linked list implement \n
-* change typedef [***] data_type; for apply different data type
+* change typedef [***] data_type; for apply different data type \n
+* beacause linked list nodes are dynamic allocated, if no longer use linked list, remember call list_clear to free all nodes
 */
 
 
@@ -125,6 +126,7 @@ bool list_is_empty(list *l);
 
 /**
  * clear linked list
+ * beacause linked list nodes are dynamic allocated, if no longer use linked list, remember call list_clear to free all nodes
  *
  * @param l linked list pointer to clear
  */
