@@ -10,10 +10,11 @@
 #define RIGHT(i)  (2 * i + 2)
 
 // to swap values of two nodes
-#define SWAP(x, y) \
+#define SWAP(x, y){ \
   data_type tmp = x; \
   x = y; \
-  y = tmp;
+  y = tmp; \
+}
 
 void heapify(heap *h, int i)
 {
@@ -24,7 +25,7 @@ void heapify(heap *h, int i)
     int l = LEFT(i);
     int r = RIGHT(i);
     int super = i;
-    if(l < h->size && h->cmp(h->nodes[l], h->nodes[i]))
+    if(l < h->size && h->cmp(h->nodes[l], h->nodes[super]))
       super = l;
     if(r < h->size && h->cmp(h->nodes[r], h->nodes[super]))
       super = r;
@@ -35,7 +36,6 @@ void heapify(heap *h, int i)
     SWAP(h->nodes[i], h->nodes[super]);
     i = super;
   }
-
 }
 
 void heap_init(heap *h, bool (*cmp)(data_type, data_type))
